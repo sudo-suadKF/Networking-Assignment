@@ -7,26 +7,26 @@
 ### Step 1: Buy a domain in Route 53:
 Navigate to AWS Rote 53 and press **Get started**. Choose the option **Register a domain** and press **Get started**.
 
-<img src="buy_domain.png"></img>
+<img src="images/buy_domain.png"></img>
 
 Choose a domain that is available. Observe the price, there are some expensive and cheap domains, then proceed to checkout.
 
 ### Step 2: Launch an EC2 instance:
 Navigate to EC2 and press **Launch Instance**. Choose **Ubuntu** as the application.
 
-<img src="ec2instance_ubuntu.png"></img>
+<img src="images/ec2instance_ubuntu.png"></img>
 
 At the instance type section, choose **t2.micro**. 
 
-<img src="ec2_instancetype.png"></img>
+<img src="images/ec2_instancetype.png"></img>
 
 Under the key pair section, create a new key pair. Enter a name, choose **RSA** as type and **.pem** as private key file format.
 
-<img src="ec2_keypair.png"></img>
+<img src="images/ec2_keypair.png"></img>
 
 In Network settings, configure the security group by creating a new security group and check all the boxes, allow SSH from **My IP** and allow HTTP and HTTPS from internet.
 
-<img src="ec2_networksettings.png"></img>
+<img src="images/ec2_networksettings.png"></img>
 
 Now you have configured your instance, launch it!
 
@@ -44,19 +44,19 @@ Choose **SSH client** tab and follow these steps:
 
 **ssh -i "<name_of_pem_file>.pem" ubuntu@ec2-18-175-59-43.eu-west-2.compute.amazonaws.com**
 
-<img src="ec2_ssh.png"></img>
+<img src="images/ec2_ssh.png"></img>
 
 ### Step 4: Create and allocate elastic IP address:
 On AWS's sidebar, find **Elastics IPs** under **Network & Security** section and enter it.
 Press **Allocate IP address** and then press **Allocate**
 
-<img src="ec2_elasticIP.png"></img>
+<img src="images/ec2_elasticIP.png"></img>
 
 At this point you have created an elastic IP address, but now it has to be associated/assigned to the running instance you have created.   
 Mark the elastic IP address and go to **Actions** and press **Associate Elastic IP address** to assign it your instance.   
 Choose your running instance and press **Associate**.
 
-<img src="ec2_assign_elasticIP.png"></img>
+<img src="images/ec2_assign_elasticIP.png"></img>
 
 Why are you assigning an elastic IP address to your instance?  
 Because every time you stop your instance and then rerun it again, the instance's public IP address will change and will not be the same as the previous one. This will cause you to link the new IP address to your domain everytime.  
