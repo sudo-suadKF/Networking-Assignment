@@ -110,7 +110,7 @@ To be able to run nginx on your instance, you have to install it first by the fo
 - Go to your instance in the terminal
 - Run these commands separately to install nginx: 
 
-**sudo apt update**
+**sudo apt update**  
 **sudo apt install nginx**
 
 - Run nginx with following command:
@@ -143,7 +143,7 @@ Follow these steps:
 - Edit the text to your liking.
 - Save the changes and reload nginx with the following commands:
 
-**sudo nginx -t**
+**sudo nginx -t**  
 **sudo systemctl reload nginx**
 
 <img src="images/edit_nginx.png"></img>
