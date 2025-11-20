@@ -140,12 +140,7 @@ Follow these steps:
 
 **sudo vim index.nginx-debian.html**
 
-- Edit the text to your liking. The text you can edit is the content between:
-
-**<title>"text"</title>**  
-**<h1>"text"</h1>**  
-**<p>"text"</p>**
-
+- Edit the text to your liking.
 - Save the changes and reload nginx with the following commands:
 
 **sudo nginx -t**
