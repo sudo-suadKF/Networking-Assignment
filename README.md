@@ -32,16 +32,16 @@ In Network settings, configure the security group by creating a new security gro
 Now you have configured your instance, launch it!
 
 ### Step 3: SSH in to the EC2 instance:
-Once he instance has launched, check the box of the instance and press **Connect**. 
-Choose **SSH client** tab and follow the these steps:
+Once the instance is launched, mark the instance and press **Connect**. 
+Choose **SSH client** tab and follow these steps:
 
-Enter the terminal
-Navigate to the directory where the .pem file is
+Enter the terminal  
+Navigate to the directory where the .pem file is  
 Run this command to set the file as read-only for the owner and no one else can read, write or execute the file:
 
 **chmod 400 "<name_of_pem_file>.pem"**
 
-Copy the following command and run it in the terminal for connecting to the instance:
+Copy the command at the bottom and run it in the terminal for connecting to the instance:
 
 **ssh -i "<name_of_pem_file>.pem" ubuntu@ec2-18-175-59-43.eu-west-2.compute.amazonaws.com**
 
@@ -53,15 +53,15 @@ Press **Allocate IP address** and then press **Allocate**
 
 <img src="ec2_elasticIP.png"></img>
 
-At this point you have created an elastic IP address, but now it has to be associated/assigned to the running instance you have created. 
-Mark the elastic IP address and go to **Actions** and press **Associate Elastic IP address** to assign it your instance. 
+At this point you have created an elastic IP address, but now it has to be associated/assigned to the running instance you have created.   
+Mark the elastic IP address and go to **Actions** and press **Associate Elastic IP address** to assign it your instance.   
 Choose your running instance and press **Associate**.
 
 <img src="ec2_assign_elasticIP.png"></img>
 
-Why are you assigning an elastic IP address to your instance?
-Because every time you stop your instance and then rerun it again, the instance's public IP address will change and will not be the same as the previous one. This will cause you to link the new IP address to your domain everytime.
-With the elastic IP address, it will stay same all the time.
+Why are you assigning an elastic IP address to your instance?  
+Because every time you stop your instance and then rerun it again, the instance's public IP address will change and will not be the same as the previous one. This will cause you to link the new IP address to your domain everytime.  
+With the elastic IP address, it will stay same all the time.  
 In the next step I will show you how to link the public IP address/Elastic IP address of your instance to your domain.
 
 ### Step 5: Linking the IP address to your domain
