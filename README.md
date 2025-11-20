@@ -149,7 +149,7 @@ Follow these steps:
 <img src="images/edit_nginx.png"></img>
 
 Now go to your web browser and refresh the page.  
-You should see your new changes applied on the page:
+You should see your new changes active
 
 <img src="images/nginx_new_HTML.png"></img>
 
