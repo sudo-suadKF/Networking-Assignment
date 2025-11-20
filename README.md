@@ -142,8 +142,8 @@ Follow these steps:
 
 - Edit the text to your liking. The text you can edit is the content between:
 
-**<title>"text"</title>**
-**<h1>"text"</h1>**
+**<title>"text"</title>**  
+**<h1>"text"</h1>**  
 **<p>"text"</p>**
 
 - Save the changes and reload nginx with the following commands:
@@ -153,7 +153,7 @@ Follow these steps:
 
 <img src="images/edit_nginx.png"></img>
 
-Now go to our web browser and refresh the page.  
+Now go to your web browser and refresh the page.  
 You should see your new changes applied on the page:
 
 <img src="images/nginx_new_HTML.png"></img>
