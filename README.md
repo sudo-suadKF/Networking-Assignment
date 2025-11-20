@@ -58,7 +58,8 @@ Choose your running instance and press **Associate**.
 
 <img src="images/ec2_assign_elasticIP.png"></img>
 
-**Why are you assigning an elastic IP address to your instance?**    
+**Why are you assigning an elastic IP address to your instance?**   
+
 Because every time you stop your instance and then rerun it again, the instance's public IP address will change and will not be the same as the previous one.  
 This will cause you to link the new IP address to your domain everytime.  
 With the elastic IP address, it will stay the same all the time.
@@ -66,6 +67,30 @@ With the elastic IP address, it will stay the same all the time.
 In the next step I will show you how to link the public IP address/Elastic IP address of your instance to your domain.
 
 ### Step 5: Linking the IP address to your domain
+To link the instance's public IP address/elastic IP address, you have to create an A record on your domain and point it to your instance.  
+This is done by following steps:
+
+- Navigate to **Hosted zones** in Route 53
+- Click on **Create hosted zone**
+- Configure it by calling it to your purchased domain name and mark it as **Public hosted zone** and then press **Create hosted zone**
+
+<img src="images/route53_config_hostedzone.png"></img>
+
+- Press **Create record**
+- Type a subdomain name or keep it blank to create a record for the root domain
+- Choose **A - Routes traffic to an IPv4 address and some AWS resources** as the record type
+- Add the public IP/elastic IP address to the **Value** section.
+- Press **Create records**
+
+<img src="images/route53_record.png"></img>
+
+Now you have created a hosted zone to be able to link the instance's IP address to your domain by an A record.
+
+**What is an A record?**
+
+
+
+
 
 
 
