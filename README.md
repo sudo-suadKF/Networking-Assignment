@@ -58,9 +58,10 @@ Choose your running instance and press **Associate**.
 
 <img src="images/ec2_assign_elasticIP.png"></img>
 
-Why are you assigning an elastic IP address to your instance?  
-Because every time you stop your instance and then rerun it again, the instance's public IP address will change and will not be the same as the previous one. This will cause you to link the new IP address to your domain everytime.  
-With the elastic IP address, it will stay the same all the time.  
+**Why are you assigning an elastic IP address to your instance?**    
+Because every time you stop your instance and then rerun it again, the instance's public IP address will change and will not be the same as the previous one.  This will cause you to link the new IP address to your domain everytime.  
+With the elastic IP address, it will stay the same all the time.
+  
 In the next step I will show you how to link the public IP address/Elastic IP address of your instance to your domain.
 
 ### Step 5: Linking the IP address to your domain
