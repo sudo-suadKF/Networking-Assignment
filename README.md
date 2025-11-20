@@ -1,4 +1,5 @@
-# Networking Assignment  ## Running Nginx on EC2 instance and linking it to a domain from Route 53
+# Networking Assignment  
+## Running Nginx on EC2 instance and linking it to a domain from Route 53
 ### In this assignment I will show you how to purchase a domain from AWS Route 53 and then link it to an EC2 istance. 
 ### The instance will run nginx on port 80, but then I will also show how to enable HTTPS because of the security, nginx will be accessed on port 443.
 
@@ -86,7 +87,77 @@ This is done by following steps:
 
 Now you have created a hosted zone to be able to link the instance's IP address to your domain by an A record.
 
-**What is an A record?**
+**What is an A record and how does it work?**
+
+The "A" stands for Address and is the most used type of DNS, Domain Name System, record.  
+It maps a human-readable domain name to the numerical IPv4 address.  
+Basically, with A record, you can search on your web browser for domain names instead of IP addresses. 
+
+This information is stored in DNS and this is how it works when you search for a website's domain in your web browser:
+
+- Web browser doesn't know where to go so it calls the DNS resolver.
+- If the DNS resolver remembers the dmain from it's cache memory, it will respond, otherwise it will call the Root Server.
+- The Root Server knows which server knows the answer and responds with an IP address to that TLD (Top_Level Domain) server.
+- The TLD server responds with an IP address to an Authoritative Nameserver which manages the domain's IP address.
+- The Nameserver sends back the right IP address of the domain to the DNS resolver.
+- Then the DNS resolver sends it to your web browser and you can access the website.
+
+Let's move on to the next step!
+
+### Step 6: Installing and running nginx on the instance:
+To be able to run nginx on your instance, you have to install it first by the following steps:
+
+- Go to your instance in the terminal
+- Run these commands separately to install nginx: 
+
+**sudo apt update**
+**sudo apt install nginx**
+
+- Run nginx with following command:
+
+**sudo service nginx start**
+
+- Check the status of nginx with the following command:
+
+**sudo service nginx status**
+
+<img src="images/nginx_status.png"></img>
+
+Now your nginx is running in the instance!
+Search the instance's IP address or your domain name on the web browser and the nginx webpage should pop up:
+
+<img src="images/nginx_webpage.png"></img>
+
+### Step 7: Customise the nginx's HTML:
+Let's make it a little bit special! Let's customise the HTML/ front end interface of the nginx webpage to make it standout.  
+Follow these steps:
+
+- Navigate to the directory where the nginx's HTML file is located:
+
+**cd /var/www/html**
+
+- Enter the file with text editor:
+
+**sudo vim index.nginx-debian.html**
+
+- Edit the text to your liking. The text you can edit is the content between:
+
+**<title>"text"</title>**
+**<h1>"text"</h1>**
+**<p>"text"</p>**
+
+- Save the changes and reload nginx with the following commands:
+
+**sudo nginx -t**
+**sudo systemctl reload nginx**
+
+<img src="images/edit_nginx.png"></img>
+
+Now go to our web browser and refresh the page.  
+You should see your new changes applied on the page:
+
+<img src="images/nginx_new_HTML.png"></img>
+
 
 
 
