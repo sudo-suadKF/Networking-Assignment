@@ -1,5 +1,4 @@
-# Networking Assignment 
-## Running Nginx on EC2 instance and linking it to a domain from Route 53
+# Networking Assignment  ## Running Nginx on EC2 instance and linking it to a domain from Route 53
 ### In this assignment I will show you how to purchase a domain from AWS Route 53 and then link it to an EC2 istance. 
 ### The instance will run nginx on port 80, but then I will also show how to enable HTTPS because of the security, nginx will be accessed on port 443.
 
@@ -35,13 +34,13 @@ Now you have configured your instance, launch it!
 Once the instance is launched, mark the instance and press **Connect**. 
 Choose **SSH client** tab and follow these steps:
 
-Enter the terminal  
-Navigate to the directory where the .pem file is  
-Run this command to set the file as read-only for the owner and no one else can read, write or execute the file:
+- Enter the terminal  
+- Navigate to the directory where the .pem file is  
+- Run this command to set the file as read-only for the owner and no one else can read, write or execute the file:
 
 **chmod 400 "<name_of_pem_file>.pem"**
 
-Copy the command at the bottom and run it in the terminal for connecting to the instance:
+- Copy the command at the bottom and run it in the terminal for connecting to the instance:
 
 **ssh -i "<name_of_pem_file>.pem" ubuntu@ec2-18-175-59-43.eu-west-2.compute.amazonaws.com**
 
@@ -61,7 +60,7 @@ Choose your running instance and press **Associate**.
 
 Why are you assigning an elastic IP address to your instance?  
 Because every time you stop your instance and then rerun it again, the instance's public IP address will change and will not be the same as the previous one. This will cause you to link the new IP address to your domain everytime.  
-With the elastic IP address, it will stay same all the time.  
+With the elastic IP address, it will stay the same all the time.  
 In the next step I will show you how to link the public IP address/Elastic IP address of your instance to your domain.
 
 ### Step 5: Linking the IP address to your domain
