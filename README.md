@@ -11,8 +11,7 @@ You’ll also learn how to customize the Nginx frontend and also how to enable H
 <img src="images/buy_domain.png"></img>
 
 ### Step 2: Launch an EC2 Instance:
-- Go to **EC2** -> click **Launch Instance**
-- Choose **Ubuntu**
+- Go to **EC2** -> click **Launch Instance**- Choose **Ubuntu**
 
     <img src="images/ec2instance_ubuntu.png"></img>
 
@@ -34,8 +33,8 @@ You’ll also learn how to customize the Nginx frontend and also how to enable H
 Launch the instance.
 
 ### Step 3: SSH Into the EC2 Instance:
-- Select your instance -> click **Connect**
-- Open your terminal and navigate to the directory with your .pem file
+- Select your instance -> click **Connect**  
+- Open your terminal and navigate to the directory with your .pem file  
 - Secure the key:
 
     `chmod 400 <name_of_pem_file>.pem`
@@ -126,7 +125,8 @@ Now visit your domain or IP, the default Nginx page should appear.
 
     `sudo vim default`
 
-- Put your A record domain name next to the uncommented **server_name** at the middle of the file and save it. It should look like this:
+- Put your A record domain name next to the uncommented **server_name** at the middle of the file and save it.  
+    It should look like this:
 
     `server_name <your A reord domain>;`
 
@@ -137,7 +137,7 @@ Now visit your domain or IP, the default Nginx page should appear.
     `sudo nginx -t`  
     `sudo systemctl reload nginx`
 
-- Download certbort for nginx's HTTPS certification and type **yes** to continue downloading:
+- Install **certbort** for nginx's HTTPS certification and enter **yes** when asked to continue installing:
 
     ` sudo apt install certbot python3-certbot-nginx`
 
