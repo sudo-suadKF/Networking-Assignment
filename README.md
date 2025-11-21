@@ -11,7 +11,8 @@ You’ll also learn how to customize the Nginx frontend and also how to enable H
 <img src="images/buy_domain.png"></img>
 
 ### Step 2: Launch an EC2 Instance:
-- Go to **EC2** -> click **Launch Instance**- Choose **Ubuntu**
+- Go to **EC2** -> click **Launch Instance**  
+- Choose **Ubuntu**
 
     <img src="images/ec2instance_ubuntu.png"></img>
 
@@ -33,8 +34,8 @@ You’ll also learn how to customize the Nginx frontend and also how to enable H
 Launch the instance.
 
 ### Step 3: SSH Into the EC2 Instance:
-- Select your instance -> click **Connect**  
-- Open your terminal and navigate to the directory with your .pem file  
+- Select your instance -> click **Connect**
+- Open your terminal and navigate to the directory with your .pem file
 - Secure the key:
 
     `chmod 400 <name_of_pem_file>.pem`
