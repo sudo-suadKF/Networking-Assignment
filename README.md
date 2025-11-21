@@ -38,11 +38,11 @@ Choose **SSH client** tab and follow these steps:
 - Navigate to the directory where the .pem file is  
 - Run this command to set the file as read-only for the owner and no one else can read, write or execute the file:
 
-`**chmod 400 "<name_of_pem_file>.pem"**`
+`chmod 400 <name_of_pem_file>.pem`
 
 - Copy the command at the bottom and run it in the terminal for connecting to the instance:
 
-`**ssh -i "<name_of_pem_file>.pem" ubuntu@ec2-18-175-59-43.eu-west-2.compute.amazonaws.com**`
+`ssh -i <name_of_pem_file>.pem ubuntu@ec2-18-175-59-43.eu-west-2.compute.amazonaws.com`
 
 <img src="images/ec2_ssh.png"></img>
 
@@ -109,16 +109,16 @@ To be able to run nginx on your instance, you have to install it first by the fo
 - Go to your instance in the terminal
 - Run these commands separately to install nginx: 
 
-`**sudo apt update**`  
-`**sudo apt install nginx**`
+`sudo apt update`  
+`sudo apt install nginx`
 
 - Run nginx with following command:
 
-`**sudo service nginx start**`
+`sudo service nginx start`
 
 - Check the status of nginx with the following command:
 
-`**sudo service nginx status**`
+`sudo service nginx status`
 
 <img src="images/nginx_status.png"></img>
 
@@ -135,17 +135,17 @@ Follow these steps:
 
 - Navigate to the directory where the nginx's HTML file is located:
 
-`**cd /var/www/html**`
+`cd /var/www/html`
 
 - Enter the file with text editor:
 
-`**sudo vim index.nginx-debian.html**`
+`sudo vim index.nginx-debian.html`
 
 - Edit the text to your liking.
 - Save the changes and reload nginx with the following commands:
 
-`**sudo nginx -t**`  
-`**sudo systemctl reload nginx**`
+`sudo nginx -t`  
+`sudo systemctl reload nginx`
 
 <img src="images/edit_nginx.png"></img>
 
