@@ -1,7 +1,7 @@
 ## Networking Assignment  
 ### Deploying Nginx on an EC2 Instance & Connecting It to a Route 53 Domain    
 This project walks through the full process of purchasing a domain in AWS Route 53, launching an EC2 instance running **Nginx**, assigning an **Elastic IP**, and linking everything together using DNS A-records.  
-You’ll also learn how to customize the Nginx frontend.
+You’ll also learn how to customize the Nginx frontend and also how to enable HTTPS on your domain.
 
 ### Step 1: Purchase a Domain in Route 53
 - Navigate to **AWS Route 53** -> click **Get started**
@@ -99,9 +99,7 @@ Check status:
 Now visit your domain or IP, the default Nginx page should appear.
 
 <img src="images/nginx_webpage.png"></img>
-
-Let's move to the final step!  
-
+  
 ### Step 7: Customize the Nginx Webpage
 - Navigate to the default HTML directory:
 
@@ -119,8 +117,43 @@ Let's move to the final step!
 
 <img src="images/edit_nginx.png"></img> <img src="images/final_domain.png"></img>
 
+### Step 8: Enable HTTPS on your domain
+- Navigate to the the following directory:
+
+    `cd /etc/nginx/sites-available`
+
+- Enter the **default** file with text editor:
+
+    `sudo vim default`
+
+- Put your A record domain name next to the uncommented **server_name** at the middle of the file and save it. It should look like this:
+
+    `server_name <your A reord domain>;`
+
+    <img src="images/https_edit_default.png"></img>
+
+- Test & reload Nginx:
+
+    `sudo nginx -t`  
+    `sudo systemctl reload nginx`
+
+- Download certbort for nginx's HTTPS certification and type **yes** to continue downloading:
+
+    ` sudo apt install certbot python3-certbot-nginx`
+
+- Enable HTTPS certification for nginx to your A record domain by following:
+
+    ` sudo certbot --nginx -d <your A record domain>`
+
+    Enter your **email** and **Y** to the upcoming questions when you run the command.
+    
+    <img src="images/https_all_comm.png"></img> <img src="images/https_success.png"></img>
+
+
 ### Final Result
-A fully deployed, fully customized Nginx server running on an EC2 instance, connected to your own Route 53 domain, with a stable Elastic IP.
+A fully deployed, fully customised Nginx server running on an EC2 instance, connected to your own Route 53 domain, with a stable Elastic IP and with HTTPS.
+
+<img src="images/https_finally.png"></img>
 
 
 
