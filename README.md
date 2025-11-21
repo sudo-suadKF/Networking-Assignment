@@ -54,7 +54,7 @@ Launch the instance.
  <img src="images/ec2_elasticIP.png"></img> <img src="images/ec2_assign_elasticIP.png"></img>
 
 Why **Elastic IP?**  
-Because EC2 public IPs change every time an instance is stopped.
+Because EC2 public IPs change every time an instance is stopped.  
 Elastic IP ensures your address stays constant.
 
 ### Step 5: Link Your Domain (Route 53 -> EC2)
@@ -70,7 +70,7 @@ Elastic IP ensures your address stays constant.
 **What is an A Record?**  
 
 It maps a **domain name** to an **IPv4 address**.  
-This allows users to enter **yourdomain.com* instead of an IP.
+This allows users to enter *yourdomain.com* instead of an IP.
 
 DNS workflow (simplified):
 - Browser asks DNS resolver
@@ -126,10 +126,10 @@ Now visit your domain or IP, the default Nginx page should appear.
 
     `sudo vim default`
 
-- Put your A record domain name next to the uncommented **server_name** at the middle of the file and save it.  
+- Put your **A record domain name** next to the uncommented **server_name** at the middle of the file and save it.  
     It should look like this:
 
-    `server_name <your A reord domain>;`
+    `server_name <your A record domain>;`
 
     <img src="images/https_edit_default.png"></img>
 
@@ -142,7 +142,7 @@ Now visit your domain or IP, the default Nginx page should appear.
 
     ` sudo apt install certbot python3-certbot-nginx`
 
-- Enable HTTPS certification for nginx to your A record domain by following:
+- Enable HTTPS certification for nginx to your **A record domain** by following command:
 
     ` sudo certbot --nginx -d <your A record domain>`
 
