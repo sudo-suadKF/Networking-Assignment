@@ -4,14 +4,14 @@ This project walks through the full process of purchasing a domain in AWS Route 
 You’ll also learn how to customize the Nginx frontend and also how to enable HTTPS on your domain.
 
 ### Step 1: Purchase a Domain in Route 53
-- Navigate to **AWS Route 53** -> click **Get started**
+- Navigate to **AWS Route 53** and click **Get started**
 - Select **Register a domain**
 - Search for an available domain and complete checkout
 
 <img src="images/buy_domain.png"></img>
 
 ### Step 2: Launch an EC2 Instance:
-- Go to EC2 -> click **Launch Instance**
+- Go to EC2 and click **Launch Instance**
 - Choose **Ubuntu**
 
     <img src="images/ec2instance_ubuntu.png"></img>
@@ -33,7 +33,7 @@ You’ll also learn how to customize the Nginx frontend and also how to enable H
 
 Launch the instance.
 
-### Step 3: SSH Into the EC2 Instance:
+### Step 3: SSH into the EC2 Instance:
 - Select your instance and click **Connect**
 - Open your terminal and navigate to the directory with your **.pem** file
 - Secure the key:
@@ -47,8 +47,8 @@ Launch the instance.
     <img src="images/ec2_ssh.png">
 
 ### Step 4: Create & Assign an Elastic IP:
-- Go to **Elastic IPs** -> **Allocate Elastic IP**
-- Select your new Elastic IP -> **Actions** -> **Associate Elastic IP**
+- Go to **Elastic IPs** and click **Allocate Elastic IP**
+- Select your new Elastic IP, click **Actions** and then click **Associate Elastic IP**
 - Attach it to your running instance
 
  <img src="images/ec2_elasticIP.png"></img> <img src="images/ec2_assign_elasticIP.png"></img>
@@ -58,7 +58,7 @@ Because EC2 public IPs change every time an instance is stopped.
 Elastic IP ensures your address stays constant.
 
 ### Step 5: Link Your Domain (Route 53 -> EC2)
-- Go to **Hosted Zones** -> **Create Hosted Zone**
+- Go to **Hosted Zones** and click **Create Hosted Zone**
     - Domain: **your purchased domain**
     - Type: **Public hosted zone**
 - Click **Create record**
@@ -69,16 +69,16 @@ Elastic IP ensures your address stays constant.
 
 **What is an A Record?**  
 
-It maps a **domain name** -> **IPv4 address**.  
+It maps a **domain name** to an **IPv4 address**.  
 This allows users to enter **yourdomain.com* instead of an IP.
 
 DNS workflow (simplified):
 - Browser asks DNS resolver
-- If not cached → resolver asks Root Server
-- Root Server → sends TLD server address
-- TLD server → sends authoritative nameserver
-- Nameserver → returns the correct IP
-- Resolver → sends IP back to browser
+- If not cached -> resolver asks Root Server
+- Root Server -> sends TLD server address
+- TLD server -> sends authoritative nameserver
+- Nameserver -> returns the correct IP
+- Resolver -> sends IP back to browser
 
 ### Step 6: Install & Run Nginx
 - Update packages and install Nginx:
@@ -90,7 +90,7 @@ DNS workflow (simplified):
 
     `sudo service nginx start`
 
-Check status:
+- Check status:
 
     `sudo service nginx status`
 
