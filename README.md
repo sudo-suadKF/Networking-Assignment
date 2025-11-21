@@ -25,8 +25,9 @@ You’ll also learn how to customize the Nginx frontend.
     <img src="images/ec2_keypair.png"></img>
 
 - Configure security group:
-    - Select SSH -> My IP
-    - Select HTTP
+    - Allow SSH -> My IP
+    - Allow HTTPS
+    - Allow HTTP
 
     <img src="images/ec2_networksettings.png"></img>
 
